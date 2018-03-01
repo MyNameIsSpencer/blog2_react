@@ -6,6 +6,19 @@ import Comment from './Comment.js';
 import Author from './Author.js';
 
 class App extends Component {
+  constructor(props) {
+    super()
+    this.state={
+      body: props.body
+    }
+  }
+
+  changeBody(e) {
+    let newBody = prompt("God dammnit, just put something here");
+    this.setState({
+      body: newBody
+    })
+  }
 
   render() {
     let comments = this.props.comments.map(comment =>
@@ -21,6 +34,7 @@ class App extends Component {
       <div>
         <h1> {this.props.title} </h1>
         <h2 className="slogan"> {this.state.body} </h2>
+        <button className="bodyButton" onClick={(e) => this.changeBody(e)}> Click for Happy </button>
         <h2> {this.props.author} </h2>
         <h2> COMMENTS: </h2>
         <pre>{comments}</pre>
