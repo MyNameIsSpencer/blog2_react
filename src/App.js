@@ -8,20 +8,20 @@ import Author from './Author.js';
 class App extends Component {
   constructor(props) {
     super()
-    this.state={
+    this.state = {
       body: props.body
     }
   }
 
   changeBody(e) {
-    let newBody = prompt("God dammnit, just put something here");
+    let newBody= prompt("New body her plaz");
     this.setState({
       body: newBody
     })
   }
 
-  handleForm(e) {
-    this.setState ({
+  handleFarm(e) {
+    this.setState({
       body: e.target.value
     })
   }
@@ -40,12 +40,11 @@ class App extends Component {
       <div>
         <h1> {this.props.title} </h1>
         <h2 className="slogan"> {this.state.body} </h2>
-        <button className="bodyButton" onClick={(e) => this.changeBody(e)}> Click for Happy </button>
-        <input type="text" onChange={ (e) => this.handleForm(e)}/>
         <h2> {this.props.author} </h2>
         <h2> COMMENTS: </h2>
         <pre>{comments}</pre>
-
+        <button className="bodyButton" onClick={(e) => this.changeBody(e)}> Batton</button>
+        <input className="slogan" onChange={(e) => this.handleFarm(e)}/>
         <style> {`
           .slogan {
             color: dodgerblue;
