@@ -20,6 +20,13 @@ class App extends Component {
     })
   }
 
+  handleForm(e) {
+    console.log(e);
+    this.setState({
+      body: e.target.value
+    })
+  }
+
   render() {
     let comments = this.props.comments.map(comment =>
       <Comment commentBody= {comment}/>
@@ -35,6 +42,7 @@ class App extends Component {
         <h1> {this.props.title} </h1>
         <h2 className="slogan"> {this.state.body} </h2>
         <button className="bodyButton" onClick={(e) => this.changeBody(e)}> Click for Happy </button>
+        <input type="text" onChange={(e) => this.handleForm(e)}/>
         <h2> {this.props.author} </h2>
         <h2> COMMENTS: </h2>
         <pre>{comments}</pre>
