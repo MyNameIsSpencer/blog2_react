@@ -1,0 +1,58 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Post from './Post.js';
+import Comment from './Comment.js';
+
+class App extends Component {
+  render() {
+
+    let authors = this.props.allAuthors.map( (author, index) => (
+      <Author author={author} key={index} />
+    ))
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+{//          <h1 className="App-title">{this.props.title}</h1>
+}
+        </header>
+        <Post title="Dinotron: Ressurection" author="Mecha Rexor" body="Time is running out"></Post>
+
+        for ( i = 0; i < authors.length; i++) {
+          return authors[i];
+        }
+      </div>
+    );
+  }
+}
+
+export default App;
+
+**********
+**********
+**********
+**********
+**********
+
+render() {
+  let comments = this.props.comments.map(comment =>
+    <Comment commentBody= {comment}/>
+  )
+
+**********
+**********
+**********
+**********
+**********
+
+
+
+{/*
+      <div>
+        <h1> {this.props.title} </h1>
+        <h2> {this.props.author} </h2>
+        <p> {this.props.body} </p>
+      </div>
+      */}
